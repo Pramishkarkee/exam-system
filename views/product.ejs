@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Admin Site</title>
+
+        <link href="./assets/style.css" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script src="./assets/viewproduct.js"></script>
+    </head>
+    <body>
+        <div align="center">
+            <h1>Welcome To Dopexi Service</h1>
+            <strong>here is a form please fill it...</strong>
+            <form action="/addItem" method="POST" enctype="multipart/form-data">
+                <!-- <form action="/addItem"> -->
+                <table>
+                    <tr>
+                        <td>Product Name:</td>
+                        <td><input type="text" name="pname" id="pname"/></td>
+                    </tr>
+                    <tr>
+                        <td>Image</td>
+                        <td><input type="file" name="filetoupload"></td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Product Quality:</td>
+                        <td>
+                            <select name="quality" id="quality">
+                                <option>High Quality</option>
+                                <option>Medium Quality</option>
+                                <option>Low Quality</option>
+                            </select><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quantity:</td>
+                        <td><input type="number" name="quantity" id='quantity'><input type="text" name="unit" id='unit' placeholdae="enter unit eg:kg,pice"></td>
+                    </tr>
+                    <tr>
+                        <td>Price:</td>
+                        <td>
+                            <input type="text" name="price" id="price">per unit
+                        </td>
+                    </tr> -->
+                    <tr>
+                        <td><button type="submit">Add</button> </td>
+                    </tr>
+                </table>
+               
+               
+                
+                
+                
+                
+                
+                
+            </form>
+            
+        </div>
+        <div id="div1"></div>
+    </body>
+</html>

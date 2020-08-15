@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Admin Site</title>
+
+        <link rel="stylesheet" type="text/css" href="/assets/css/login.css" >
+
+        
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <%- include("./nav/navbar.ejs") %>
+        <div align="center">
+            <h2>Please Read All Terms and Condition Of This System and <br>Click The Button to Get Started</h2><br>
+            <form method="post" action="/startexam">
+                <button class="btn btn-primary">Get Started</button>
+            </form>
+        </div>
+    </body>
+</html>

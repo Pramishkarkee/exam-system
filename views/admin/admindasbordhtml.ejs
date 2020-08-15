@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Admin Site</title>
+
+        <link rel="stylesheet" type="text/css" href="/assets/css/admin.css" >
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/assets/js/admin.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand" href="#" style="margin-right: 20%;">Online Exam</a>
+           
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active"  href="#">Terms & Condition <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="#">Rules and Regulation</a>
+                <a class="nav-item nav-link active" href="#">Procedure</a>
+                <a class="nav-item nav-link active" id="notification" href="./qncollection">
+                    <h5><span class="badge badge-light" style="padding-right: 17px;">question</span></h5>
+                    <span class="badge" id="count">3</span>
+                </a>
+              </div>
+            </div>
+          </nav>
+        <div  class="question">
+            <form action="/addQuestion" method="post">
+                <div class="container">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Example textarea</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="Question" rows="3"></textarea>
+                    </div>
+                    <div class="outset">
+                        Enter All Your Choice:
+                        <div class="form-row">
+                            <div class="col">
+                              a.<input type="text" class="form-control" name="a" id="a" placeholder="First Choice">
+                            </div>
+                            <div class="col">
+                              b.<input type="text" class="form-control" name="b" id="b" placeholder="Secound choice">
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-top: 10px;">
+                            <div class="col">
+                              c.<input type="text" class="form-control" name="c" id="c" placeholder="Third choice">
+                            </div>
+                            <div class="col">
+                              d.<input type="text" class="form-control" name="d" id="d" placeholder="Fourth choice">
+                            </div>
+                        </div>
+
+                    </div>
+                    <ul>
+                        <li id="ali"></li>
+                        <li id="bli"></li>
+                        <li id="cli"></li>
+                        <li id="dli"></li>
+                    </ul>
+                    <div class="form-row">
+                      <div class="col">
+                        <select id="inputState" class="form-control" name="category">
+                          <option value="none">Category Of Question</option>
+                          <option  value="low">Low</option>
+                          <option  value="medium">Medium</option>
+                          <option  value="Heigh">Heigh</option>
+                          <option  value="Advance">Advance</option>
+                        </select>
+                      </div>
+                      <div class="col">
+                        <select id="inputState" class="form-control" name="Answer">
+                          <option value="none">Choose The Right Answer</option>
+                          <option id="aoption" ></option>
+                          <option id="boption" ></option>
+                          <option id="coption" ></option>
+                          <option id="doption" ></option>
+                        </select>
+                      </div>
+                  </div>
+                    
+                      <button class="btn btn-primary float-right mt-4" type="submit">Submit</button>
+                </div>
+                
+                
+            </form>
+            <div class="dispalyqn">
+              <ul>
+                <% for (var i=0; i<data.length ; i++){%>
+                <div class="alert alert-primary" role="alert">
+                  
+                    <li><%= i %>.<%= data[i].Question %></li>
+                  
+                </div>
+                <% }%>
+              </ul>
+            </div>
+        </div>
+    </body>
+</html>

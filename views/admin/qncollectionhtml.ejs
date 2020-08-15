@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Admin Site</title>
+
+        <link rel="stylesheet" type="text/css" href="/assets/css/admin.css" >
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/assets/js/admin.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand" href="#" style="margin-right: 20%;">Question Module</a>
+           
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active"  href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="#">Rules and Regulation</a>
+                <a class="nav-item nav-link active" href="#">Procedure</a>
+                <a class="nav-item nav-link active" href="#" id="lowqnshow">Low</a>
+                <a class="nav-item nav-link active" href="#" id="mediumqnshow">Medium</a>
+                <a class="nav-item nav-link active" href="#" id="highqnshow">Heigh</a>
+                <a class="nav-item nav-link active" href="#" id="advanceqnshow">Advance</a>
+                <a class="nav-item nav-link active" id="notification" href="#">
+                    <h5><span class="badge badge-light" style="padding-right: 17px;">question</span></h5>
+                    <span class="badge" id="count">3</span>
+                </a>
+              </div>
+            </div>
+          </nav>
+          <div class="container">
+                
+                <div class="medium">
+                    <h3 align="center" style="margin:5% 5% 2% 5%">This is Medium Type Question which weight is (5-8)</h3>
+                    <% for(var i=0;i<data.length ;i++){ %>
+                        
+                            <% if(data[i].category=='medium') { %>
+                                <div class="alert alert-danger" role="alert">
+                                    Q)  <%=  data[i].Question %> <br>
+                                    <a style="color:blue; margin: 0% 2% 0% 0%;">view all</a> <a style="color:blue; margin: 0% 2% 0% 0%;">Edit</a><a style="color:red; margin: 0% 2% 0% 0%;">Delete</a>
+                                    <div id="mview1">
+                                        <b style="margin-right: 2%;">1.<%= data[i].a %></b>
+                                        <b style="margin-right: 2%;">2.<%= data[i].b %></b>
+                                        <b style="margin-right: 2%;">3.<%= data[i].c %></b> 
+                                        <b style="margin-right: 2%;">4.<%= data[i].d %></b> 
+                                        <p style="color: red;">Answer :<%= data[i].Answer %></p>
+                                    </div>
+                                </div>
+                                
+                            <% } %>
+                    <% } %>
+                </div>
+                <div class="low">
+                    <h3 align="center" style="margin:5% 5% 2% 5%">This is Low Type Question which weight is (1-5)</h3>
+                    <% for(var i=0;i<data.length ;i++){ %>
+                        
+                            <% if(data[i].category=='low') { %>
+                                <div class="alert alert-dark" role="alert">
+                                
+                                    Q)  <%=  data[i].Question %><br>
+                                    
+                                    <a href="">view</a> <a href="">Edit</a>
+                                    <a style="color:blue; margin: 0% 2% 0% 0%;">view all</a> <a style="color:blue; margin: 0% 2% 0% 0%;">Edit</a><a style="color:red; margin: 0% 2% 0% 0%;">Delete</a>
+                                    <div id="mview1">
+                                        <b style="margin-right: 2%;">1.<%= data[i].a %></b>
+                                        <b style="margin-right: 2%;">2.<%= data[i].b %></b>
+                                        <b style="margin-right: 2%;">3.<%= data[i].c %></b> 
+                                        <b style="margin-right: 2%;">4.<%= data[i].d %></b> 
+                                        <p style="color: red;">Answer :<%= data[i].Answer %></p>
+                                    </div>
+                                </div>
+                            <% } %>
+                        
+                    <% } %>
+                </div>
+                <div class="heigh">
+                    <h3 align="center" style="margin:5% 5% 2% 5%">This is High Type Question which weight is (8-12)</h3>
+                    <% for(var i=0;i<data.length ;i++){ %>
+                        
+                            <% if(data[i].category=='Heigh') { %>
+                                <div class="alert alert-info" role="alert">
+                                    Q) <%=  data[i].Question %><br>
+                                    <a style="color:blue; margin: 0% 2% 0% 0%;">view all</a> <a style="color:blue; margin: 0% 2% 0% 0%;">Edit</a><a style="color:red; margin: 0% 2% 0% 0%;">Delete</a>
+                                    <div id="mview1">
+                                        <b style="margin-right: 2%;">1.<%= data[i].a %></b>
+                                        <b style="margin-right: 2%;">2.<%= data[i].b %></b>
+                                        <b style="margin-right: 2%;">3.<%= data[i].c %></b> 
+                                        <b style="margin-right: 2%;">4.<%= data[i].d %></b> 
+                                        <p style="color: red;">Answer :<%= data[i].Answer %></p>
+                                    </div>
+                                </div>
+                            <% } %>
+                        
+                        
+                    <% } %>
+                </div>
+                <div class="advance">
+                    <h3 align="center" style="margin:5% 5% 2% 5%">This is Advance Type Question which weight is (12-16)</h3>
+                    <% for(var i=0;i<data.length ;i++){ %>
+                        
+                            
+                        <% if(data[i].category=='advance') { %>
+                            <div class="alert alert-success" role="alert">
+                                Q)<%=  data[i].Question %><br>
+                                <a style="color:blue; margin: 0% 2% 0% 0%;">view all</a> <a style="color:blue; margin: 0% 2% 0% 0%;">Edit</a><a style="color:red; margin: 0% 2% 0% 0%;">Delete</a>
+                                    <div id="mview1">
+                                        <b style="margin-right: 2%;">1.<%= data[i].a %></b>
+                                        <b style="margin-right: 2%;">2.<%= data[i].b %></b>
+                                        <b style="margin-right: 2%;">3.<%= data[i].c %></b> 
+                                        <b style="margin-right: 2%;">4.<%= data[i].d %></b> 
+                                        <p style="color: red;">Answer :<%= data[i].Answer %></p>
+                                    </div>
+                            </div>
+                            <% } %>
+                        
+                    <% } %>
+                </div>
+             
+        </div>
+        
+    </body>
+</html>
